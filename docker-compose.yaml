@@ -16,7 +16,7 @@ services:
     healthcheck: #optional
       test: ['CMD','pg-isready','-U','auth']
       interval: 30s
-      timeout: 30s,
+      timeout: 30s
       retries: 3
 
   pgadmin:
