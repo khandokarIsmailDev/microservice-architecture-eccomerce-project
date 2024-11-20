@@ -34,6 +34,8 @@
 11. so we need to use the `postgres` name in the `Host name/address` field, and username and password is `postgres`
 ![image](./Readmi-image/src2.png)
 
+NOTE : `host.docker.internal` is a special Host name/address; if mac is not working `postgres`,then use `host.docker.internal`
+
 ## now we work with prisma
 
 1. `npx prisma init` for create prisma folder and prisma schema file
