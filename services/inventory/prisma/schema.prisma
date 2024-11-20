@@ -17,6 +17,7 @@ model Inventory {
   id        String   @id @default(cuid())
   sku       String   @unique
   productId String   @unique
+  quantity Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   histories History[]
