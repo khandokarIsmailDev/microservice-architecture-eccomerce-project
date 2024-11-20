@@ -38,4 +38,5 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 
 ## now we work with prisma
 
-1. `npx prisma init` for create prisma folder and prisma schema file
+1. `npm i prisma @prisma/client --save-dev` for install prisma client
+2. `npx prisma init --datasource-provider postgresql` for create prisma folder and prisma schema file

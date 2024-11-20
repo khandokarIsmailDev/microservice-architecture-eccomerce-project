@@ -17,10 +17,10 @@ app.get('/health',(_req,res) =>{
 
 
 //404 handler
-// app.use((err,req,res,next) =>{
-//     console.error(err.stack)
-//     res.status(500).json({message:'internal-server-error'})
-// })
+app.use((err:any,_req:any,res:any,_next:any) =>{
+    console.error(err.stack)
+    res.status(500).json({message:'internal-server-error'})
+})
 
 const port = process.env.PORT || 4002
 const serviceName = process.env.SERVICE_NAME || 'inventory-service'
