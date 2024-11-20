@@ -5,7 +5,7 @@
 
 ## first we work with inventory service (servecs/inventory)
 
-1. first npm install in the root folder (`npm i express cors dotenv morgan jod`)
+1. first npm install in the root folder (`npm i express cors dotenv morgan zod`)
 2. index.ts is our Root file
 3. create `controllers` folder and create `index.ts` file
 4. for typescript we need install jod for type checking
