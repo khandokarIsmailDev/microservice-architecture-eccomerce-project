@@ -40,3 +40,14 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 
 1. `npm i prisma @prisma/client --save-dev` for install prisma client
 2. `npx prisma init --datasource-provider postgresql` for create prisma folder and prisma schema file
+
+## Endponits 
+![image](./Readmi-image/src3.png)
+
+## Modify ERD Diagram
+![image](./Readmi-image/src4.png)
+- modify the ERD Diagram, now we have separeted the connected tables, this diagram is clearfy the relationship between the tables for specific service; and we will confirm how many services we need to create
+
+## History and Inventory Service
+![image](./Readmi-image/src5.png)
+
