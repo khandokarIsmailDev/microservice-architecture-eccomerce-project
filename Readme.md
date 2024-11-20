@@ -16,3 +16,24 @@
 9. `npm i -D @types/express @types/node @types/cors @types/morgan` for type checking
 10. then add `"scripts": { "dev": "ts-node-dev -r tsconfig-paths/register ./src/index.ts", "build": "tsc && tsc-alias" }` in package.json file
 11. now we can run `npm run dev` for run the server
+
+
+## now we work with postgres
+
+1. we already run the postgres service in docker compose file
+2. now visit `localhost:5050` in browser
+3. now we can see the postgres is running
+4. now login with `ismailkhandokar0@gmail.com` email and `admin` password
+5. now create a new server `postgres-server`
+6. a big provlem `localhost or using 127.0.0.1` will not work in `Connection` tab
+7. now we need to inspect the `postgres` container and get the ip address `docker inspect postgres`
+8. now we can see the ip address in the `Networks` section
+9. now we can use the ip address in the `Connection` tab in `Host name/address` field
+![image](./Readmi-image/scr1.png)
+10. but ip address is not a good idea for production, because ip address can change
+11. so we need to use the `postgres` name in the `Host name/address` field, and username and password is `postgres`
+![image](./Readmi-image/src2.png)
+
+## now we work with prisma
+
+1. `npx prisma init` for create prisma folder and prisma schema file
