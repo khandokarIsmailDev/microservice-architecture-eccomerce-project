@@ -62,3 +62,5 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 }
 ```
 
+# now we work with Product Service
+![image](./Readmi-image/src6.png)
