@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import morgan from 'morgan'
-import { createProduct } from './controllers'
+import { createProduct,getProducts } from './controllers'
 dotenv.config()
 
 const app = express()
@@ -17,7 +17,7 @@ app.get('/health',(_req,res) =>{
 
 //product endpoints
 app.post('/products',createProduct)
-
+app.get('/products',getProducts)
 
 //404 handler
 app.use((err:any,_req:any,res:any,_next:any) =>{
