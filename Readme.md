@@ -74,4 +74,9 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 - Get All Products
 - Get Product By Id
 
-# Inventory and Product Service er jonno amra 2ta service create korsi; akhon client k eto kiso jananor dorkar nai, client k akta matro url dibo jekhane hit korle 2ta service er response asbe; er jonno  `Api Gateway` service create korte hobe;
+## Inventory and Product Service er jonno amra 2ta service create korsi; akhon client k eto kiso jananor dorkar nai, client k akta matro url dibo jekhane hit korle 2ta service er response asbe; er jonno  `Api Gateway` service create korte hobe;
+
+# Api Gateway Service
+
+![image](./Readmi-image/src7.png)
+![image](./Readmi-image/src8.png)
