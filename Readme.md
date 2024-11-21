@@ -86,3 +86,16 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 - `http://localhost:8081/api/inventories/cm3r4p8mp00007sdm1j8d2i22/details` -> `inventory by id     `
 - `http://localhost:8081/api/products/cm3r4p8mp00007sdm1j8d2i22` -> `single product`
 - `http://localhost:8081/api/products` -> `all products`
+
+# Rate Limiting
+Rate limiting check korar jonno `express-rate-limit` package use kora hoyeche; `index.ts` file e rate limiting 5 korbe; 15 minutes er moddhe 5 ta request accept korbe; er besi korle 429 error dibe; DDOS attack theke protect korar jonno use kora hoyeche; 
+Postmane Show this response , if we hit more than 5 times in 15 minutes;
+```js
+{
+    "message":"Too many requests from this IP, please try again in 15 minutes"
+}
+```
+
+# Access Denied
+amra jehoto `Api Gateway` service create korsi, jekhane `inventory` &&  `product` service er response asbe; er jonno `Api Gateway` service er `config.json` file e `inventory` && `product` service er `origin` set kora hoyeche;
+akhon amra chai na baire theke `inventory` && `product` service er endpoint hit korte parok; er jonno akta middleware create korbo `index.ts` file e; both service er khetre;(`inventory`&&`product`)

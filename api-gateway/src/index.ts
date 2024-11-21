@@ -15,7 +15,7 @@ app.use(helmet());
 // Rate limiting middleware
 const limiter = rateLimit({
     windowMs:15 * 60 * 1000, // 15 minutes
-    max:100, // Limit each IP to 100 requests per windowMs
+    max:5, // Limit each IP to 5 requests per windowMs
     handler:(req,res) =>{
         res.status(429).json({message:"Too many requests from this IP, please try again in 15 minutes"})
     }
@@ -36,6 +36,11 @@ configureRoutes(app);
 //helathcheck endpoint
 app.get("/health",(req,res) =>{
     res.status(200).json({message:"API Gateway is healthy"});
+});
+
+//404 error handling middleware
+app.use((req,res,next) =>{
+    res.status(404).json({message:"Not found"});
 });
 
 // Error handling middleware
