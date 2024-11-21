@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import morgan from 'morgan'
-import { createInventory, updateInventory,getInventoryById } from './controllers'
+import { createInventory, updateInventory,getInventoryById,getInventDetails } from './controllers'
 
 dotenv.config()
 
@@ -19,6 +19,8 @@ app.get('/health',(_req,res) =>{
 //inventory endpoints
 app.post('/inventories', createInventory)
 app.get('/inventories/:id',getInventoryById)
+app.get('/inventories/:id/details',getInventDetails)
+
 //update inventory
 app.put('/inventories/:id',updateInventory)
 
