@@ -51,3 +51,14 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 ## History and Inventory Service
 ![image](./Readmi-image/src5.png)
 
+## Create Inventory Service
+
+`{{bash}}/inventories`
+
+```js
+{
+    "productId":"test_idd",
+    "sku":"test_skud"
+}
+```
+
