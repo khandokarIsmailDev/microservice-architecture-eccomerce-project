@@ -11,19 +11,19 @@
                     "method":["get"]
                 }
             ]
+        },
+        "inventory":{
+            "url":"http://localhost:4002",
+            "routes":[
+                {
+                    "path":"/inventories/:id",
+                    "method":["put"]
+                },
+                {
+                    "path":"/inventories/:id/details",
+                    "method":["get"]
+                }
+            ]
         }
-    },
-    "inventory":{
-        "url":"http://localhost:4002",
-        "routes":[
-            {
-                "path":"/inventories/:id",
-                "method":["put"]
-            },
-            {
-                "path":"/inventories/:id/details",
-                "method":["get"]
-            }
-        ]
     }
 }
