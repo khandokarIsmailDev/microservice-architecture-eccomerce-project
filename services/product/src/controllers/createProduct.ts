@@ -39,18 +39,17 @@ const createProduct = async (req:Request,res:Response,next:NextFunction) =>{
         console.log(`inventory created with id: ${inventory.id}`)
 
         //update product and store inventory id
-        await prisma.product.update({
+        const updatedProduct = await prisma.product.update({
             where:{id:product.id},
             data:{
                 inventoryId:inventory.id
             }
         })
 
-        console.log(`product updated with inventory id: ${inventory.id}`)
+        console.log(`product updated with inventory id: ${updatedProduct.inventoryId}`)
 
-        res.status(201).json({message:"product-created-successfully",product})
+        res.status(201).json({message:"product-created-successfully",product: updatedProduct})
         return
-
 
     }catch(err){
         next(err)
