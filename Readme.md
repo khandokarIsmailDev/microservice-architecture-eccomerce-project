@@ -61,6 +61,17 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
     "sku":"test_skud"
 }
 ```
+- create inventory
+- update inventory
+- get inventory by id
+- get inventory details by id
 
 # now we work with Product Service
 ![image](./Readmi-image/src6.png)
+
+# now Complete Product Service
+- create Product Service
+- Get All Products
+- Get Product By Id
+
+# Inventory and Product Service er jonno amra 2ta service create korsi; akhon client k eto kiso jananor dorkar nai, client k akta matro url dibo jekhane hit korle 2ta service er response asbe; er jonno  `Api Gateway` service create korte hobe;
