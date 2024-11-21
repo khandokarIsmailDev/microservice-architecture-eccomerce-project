@@ -80,3 +80,9 @@ NOTE : `host.docker.internal` is a special Host name/address; if mac is not work
 
 ![image](./Readmi-image/src7.png)
 ![image](./Readmi-image/src8.png)
+
+### Most important file is `config.json` && `utils.ts` file; ai 2 ta file er kaj holo `Api Gateway` service er kaj;
+
+- `http://localhost:8081/api/inventories/cm3r4p8mp00007sdm1j8d2i22/details` -> `inventory by id     `
+- `http://localhost:8081/api/products/cm3r4p8mp00007sdm1j8d2i22` -> `single product`
+- `http://localhost:8081/api/products` -> `all products`

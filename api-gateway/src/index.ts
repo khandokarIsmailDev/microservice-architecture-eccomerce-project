@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import morgan from "morgan";
+import { configureRoutes } from "./utils";
 
 dotenv.config();
 
@@ -28,6 +29,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 //Todo: Auth middleware
+
+//configure routes
+configureRoutes(app);
 
 //helathcheck endpoint
 app.get("/health",(req,res) =>{
