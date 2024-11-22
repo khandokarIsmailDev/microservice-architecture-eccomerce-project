@@ -3,6 +3,8 @@
 1. create docker compose file
 2. docker compose up
 
+# If `npm run build` command not work for `inventory` & `product` service, then follow the `user` service `tsconfig.json` file and `package.json` file
+
 ## first we work with inventory service (servecs/inventory)
 
 1. first npm install in the root folder (`npm i express cors dotenv morgan zod`)
