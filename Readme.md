@@ -111,3 +111,5 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 - 1st `user Service`
 - 2nd `Email Service`,
 - 3rd `Auth Service`
+
+## `auth` Service create
