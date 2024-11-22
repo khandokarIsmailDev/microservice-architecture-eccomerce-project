@@ -99,3 +99,8 @@ Postmane Show this response , if we hit more than 5 times in 15 minutes;
 # Access Denied
 amra jehoto `Api Gateway` service create korsi, jekhane `inventory` &&  `product` service er response asbe; er jonno `Api Gateway` service er `config.json` file e `inventory` && `product` service er `origin` set kora hoyeche;
 akhon amra chai na baire theke `inventory` && `product` service er endpoint hit korte parok; er jonno akta middleware create korbo `index.ts` file e; both service er khetre;(`inventory`&&`product`)
+
+
+# Day 3 - Implementing Authentication Service
+![image](./Readmi-image/src9.png)
+![image](./Readmi-image/src10.png)
