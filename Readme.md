@@ -115,3 +115,8 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 ## `auth` Service create ; now we create the `user` service;
 
 ![image](./Readmi-image/src11.png)
+
+# `user` & `auth` service er connection
+- `user` service moloto user er profile create korbe;
+- `auth` service moloto user er authentication korbe;
+- `auth` service er `userRegistration` controller theke `user` service er create-user controller e call kore user profile create korbe;
