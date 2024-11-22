@@ -112,4 +112,6 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 - 2nd `Email Service`,
 - 3rd `Auth Service`
 
-## `auth` Service create
+## `auth` Service create ; now we create the `user` service;
+
+![image](./Readmi-image/src11.png)
