@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import morgan from 'morgan'
+import { createUser } from './controllers'
 dotenv.config()
 
 const app = express()
@@ -25,6 +26,9 @@ app.get('/health',(_req,res) =>{
 //         res.status(403).json({message:"Access denied"})
 //     }
 // })
+
+//routes
+app.post('/user',createUser)
 
 
 //404 handler
