@@ -104,3 +104,8 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 # Day 3 - Implementing Authentication Service
 ![image](./Readmi-image/src9.png)
 ![image](./Readmi-image/src10.png)
+
+`src10` image e chart e follow kora hoyse; we create the service serrilay;
+- 1st `user Service`
+- 2nd `Email Service`,
+- 3rd `Auth Service`
