@@ -48,12 +48,7 @@ const userLogin = async(req:Request,res:Response,next:NextFunction)=>{
         })
 
         if(!user){
-            await createLoginHistory({
-                userId:'Guest',
-                userAgent,
-                ipAddress,
-                attempt:LoginAttempt.FAILED
-            })
+            
             res.status(400).json({
                 message:"User not found"
             })
@@ -61,12 +56,7 @@ const userLogin = async(req:Request,res:Response,next:NextFunction)=>{
         }
 
         //compare the password
-        if (!parsedBody.data) {
-            res.status(400).json({
-                message: "Invalid request body"
-            });
-            return;
-        }
+        
         const isMatch = await bcrypt.compare(parsedBody.data.password, user.password)
         if(!isMatch){
             await createLoginHistory({
