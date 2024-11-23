@@ -49,7 +49,7 @@ const userLogin = async(req:Request,res:Response,next:NextFunction)=>{
 
         if(!user){
             
-            res.status(400).json({
+            res.status(404).json({
                 message:"User not found"
             })
             return;
@@ -124,6 +124,7 @@ const userLogin = async(req:Request,res:Response,next:NextFunction)=>{
 
 
     }catch(err){
+        console.log('[userLogin] ',err)
         next(err)
     }
 }

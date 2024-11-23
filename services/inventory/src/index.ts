@@ -17,16 +17,16 @@ app.get('/health',(_req,res) =>{
 })
 
 //access denied middleware
-app.use((req,res,next) =>{
-    const allowedOrigins = ['http://localhost:8081','http://127.0.0.1:8081']
-    const origin = req.headers.origin || ''
-    if(allowedOrigins.includes(origin)){
-        res.setHeader('Access-Control-Allow-Origin',origin)
-        next()
-    }else{
-        res.status(403).json({message:"Access denied"})
-    }
-})
+// app.use((req,res,next) =>{
+//     const allowedOrigins = ['http://localhost:8081','http://127.0.0.1:8081']
+//     const origin = req.headers.origin || ''
+//     if(allowedOrigins.includes(origin)){
+//         res.setHeader('Access-Control-Allow-Origin',origin)
+//         next()
+//     }else{
+//         res.status(403).json({message:"Access denied"})
+//     }
+// })
 
 //inventory endpoints
 app.post('/inventories', createInventory)
