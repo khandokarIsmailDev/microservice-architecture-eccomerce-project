@@ -120,7 +120,17 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 - `user` service moloto user er profile create korbe;
 - `auth` service moloto user er authentication korbe;
 - `auth` service er `userRegistration` controller theke `user` service er create-user controller e call kore user profile create korbe;
+
+## NOTE: `auth` service er `userRegistration` controller theke `email` service er `sentEmail` controller e call kora hoyeche; tai `email` service create korte hobe; then `auth` service run korte hobe;
+
+1. `userRegistration.ts` - er jonno `schemas.ts` e create kora hoyeche 
+2. `userLogin.ts` create kora hoyeche
+3. `verifyToken.ts` create kora hoyeche
+4. `verifyEmail.ts` create kora hoyeche  //1st create `email` service then do this
  
  ## `email` service
  - `email` service er jonno `mailhog` service use kora hoyeche; docker-compose.yaml file e `mailhog` service add kora hoyeche; smtp port e `1025` & http port e `8025` set kora hoyeche; amra chaile porobortite real smtp server use korte parbo ai docker compose file e;
  - `http://localhost:8025` e jabe mailhog er dashboard;
+
+## `email` service er jonno serially ai kaj gola korte hobe
+

@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import morgan from 'morgan'
-import { verifyToken,userLogin,userRegistration } from './controllers'
+import { verifyToken,userLogin,userRegistration,verifyEmail } from './controllers'
 dotenv.config()
 
 const app = express()
@@ -31,6 +31,7 @@ app.get('/health',(_req,res) =>{
 app.post('/auth/registration',userRegistration)
 app.post('/auth/login',userLogin)
 app.post('/auth/verify-token',verifyToken)
+app.post('/auth/verify-email',verifyEmail)
 
 
 //404 handler
