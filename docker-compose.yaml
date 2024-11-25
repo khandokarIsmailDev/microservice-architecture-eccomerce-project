@@ -39,6 +39,20 @@ services:
     volumes:
       - mailhog:/var/lib/mailhog
 
+  redis-stack:
+    image: redis/redis-stack:latest
+    container_name: redis-stack
+    ports:
+      - '6379:6379'
+      - '8001:8001'
+    volumes:
+      - redis-stack:/var/lib/redis-stack
+    environment:
+      - REDIS_ARGS=-save 900 1  #poti 900 second er por 1 ta update hbe
+
+
+
 volumes:
   postgres:
   mailhog:
+  redis-stack:

@@ -153,3 +153,14 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 - **stream** : stream er jonno use kora hoy; kind of bytes er data rakhte pare;
 - **geospatial** : map/location er jonno use kora hoy; 
 - **time series** : time series data er jonno use kora hoy; poti second 1lak er besi data rakhte pare;
+
+### Run Redis Server with Docker
+```bash
+docker run -it --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+```
+- `-p 6379:6379` : 6379 is the port for redis server
+- `-p 8001:8001` : 8001 is the port for redis stack server ( redis insider dashboard er jonno)
+
+- product jokhon cart e add kora hoy, tai cart e add korar somoy product er quantity update korte hobe; and sei sate akta TTL(for redis) mane time to live set korte hobe; jemon 15 minute set kore dilam, tai 15 minute porjonto cart e product er quantity update korte pare; 15 minute por user checkout na korle inventory theke product ta realize hoy jabe;
+- localstroage er kono proyozon nai ai khetre;
+![image](./Readmi-image/src15.png)
