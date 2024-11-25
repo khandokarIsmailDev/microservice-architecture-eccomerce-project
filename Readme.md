@@ -134,3 +134,22 @@ akhon amra chai na baire theke `inventory` && `product` service er endpoint hit 
 
 ## `email` service er jonno serially ai kaj gola korte hobe
 
+
+# Day 4 - Card Service with Redis
+
+![image](./Readmi-image/src12.png)
+
+- Redis : Remote Dictionary Server 
+![image](./Readmi-image/src13.png)
+
+- Redis Data Types
+![image](./Readmi-image/src14.png)
+
+- **string** : string diye doniar sob kaj e kora jay; like json k string e convert kore feli, tahol ek string diye sob kaj korte pari; mostly sob jaygay caching er jonno use kora hoy;
+- **list** : list is kind of array but kono array na,list take stack othoba queue both purpose use korte pari;redis er modde kono array data structure nai;  
+- **sorted set** : priority queue hisabae use kora jay; `queue vs sorted set`: 
+- **hash** : javascript er object er moto kaj kore; 
+- **json** : very very powerful than hash; norlma kaje hase use kori, but continuasly update er jonno use kora hoy; sodo write operation er jonno use kora hoy; `hash` er osobida hosse nested object rakte pare nah; `json` multi label nesting korte pare, er bitor array rakte pare; binno binno data rakhte pare;
+- **stream** : stream er jonno use kora hoy; kind of bytes er data rakhte pare;
+- **geospatial** : map/location er jonno use kora hoy; 
+- **time series** : time series data er jonno use kora hoy; poti second 1lak er besi data rakhte pare;
