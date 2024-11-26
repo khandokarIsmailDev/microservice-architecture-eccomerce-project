@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import morgan from "morgan";
+import { addToCart } from "./controllers";
 
 dotenv.config();
 
@@ -29,6 +30,8 @@ app.use(express.json());
 
 //Todo: Auth middleware
 
+//routes
+app.post('/cart/add-to-cart',addToCart);
 
 
 //helathcheck endpoint
