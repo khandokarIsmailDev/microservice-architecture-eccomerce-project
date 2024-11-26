@@ -46,7 +46,7 @@ const addToCart = async (req:Request,res:Response,next:NextFunction ) =>{
             quantity:parsedBody.data.quantity
         }));
 
-        res.status(200).json({message:"Item added to cart"});
+        res.status(200).json({message:"Item added to cart",cartSessionId});
         return;
 
         //TODO: check inventory for availability
