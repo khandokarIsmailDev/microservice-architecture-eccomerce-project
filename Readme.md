@@ -161,6 +161,10 @@ docker run -it --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:la
 - `-p 6379:6379` : 6379 is the port for redis server
 - `-p 8001:8001` : 8001 is the port for redis stack server ( redis insider dashboard er jonno)
 
-- product jokhon cart e add kora hoy, tai cart e add korar somoy product er quantity update korte hobe; and sei sate akta TTL(for redis) mane time to live set korte hobe; jemon 15 minute set kore dilam, tai 15 minute porjonto cart e product er quantity update korte pare; 15 minute por user checkout na korle inventory theke product ta realize hoy jabe;
+- product jokhon cart e add kora hoy, tai cart e add korar somoy product er quantity update korte hobe; and sei sate akta TTL(for redis) mane time to live set korte hobe; jemon 2 minute set kore dilam, tai 2 minute porjonto cart e product er quantity update korte pare; 2 minute por user checkout na korle inventory theke product ta realize hoy jabe;
 - localstroage er kono proyozon nai ai khetre;
 ![image](./Readmi-image/src15.png)
+
+### Relise product after 2min
+- er jonno amra `events` => `onKeyExpires.ts` file er modde `redis` er `subscribe` method use kora hoyeche; aita abar just `index.ts` ter link kore dewa hoise; er kaj 2 min por redis product relese kore dibe and setar log info show korbe terminal e; and age to amra ekta kaj korei rekhe silam; 2 mint er modde product add-to-cart theke delete hoye jabe, ar ekhon tar log info show korbe terminal e; aitoko kora hoise
+
