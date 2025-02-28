@@ -10,6 +10,7 @@ const getMyCart = async(req:Request,res:Response,next:NextFunction) =>{
             return;
         }
 
+        //check if the session id exist in the store
         const session = await redis.get(`sessions:${cartSessionId}`);
         if(!session){
             await redis.del(`sessions:${cartSessionId}`);
@@ -17,12 +18,27 @@ const getMyCart = async(req:Request,res:Response,next:NextFunction) =>{
             return;
         }
 
-        const cart = await redis.hgetall(`cart:${cartSessionId}`);
-        console.log('cart',cart);
+        const items = await redis.hgetall(`cart:${cartSessionId}`);
+        if(Object.keys(items).length === 0){
+             res.status(200).json({data:[]})
+             return;
+        }
 
-        res.status(200).json({cart});
-        return;
+        //format the items
+        const formatedItems = Object.keys(items).map(key =>{
+            const {quantity,inventoryId} = JSON.parse(items[key]) as {
+                inventoryId:string,
+                quantity:number
+            };
 
+            return {
+                inventoryId,
+                quantity,
+                producId: key
+            }
+        })
+
+        res.status(200).json({items:formatedItems})
 
     }catch(error){
         next(error);

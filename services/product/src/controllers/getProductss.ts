@@ -8,7 +8,8 @@ const getProducts = async (req:Request,res:Response,next:NextFunction) =>{
             id:true,
             sku:true,
             name:true,
-            inventoryId:true
+            inventoryId:true,
+            price:true
         }
     })
 

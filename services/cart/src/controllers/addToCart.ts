@@ -2,7 +2,8 @@ import { Request, Response,NextFunction } from "express";
 import { CartItemSchema } from "../schemas";
 import redis from "../redis";
 import { v4 as uuid } from 'uuid';
-import { CART_TTL } from "../config";
+import { CART_TTL, INVENTORY_SERVICE } from "../config";
+import axios from "axios";
 
 const addToCart = async (req:Request,res:Response,next:NextFunction ) =>{
     try{
@@ -38,20 +39,32 @@ const addToCart = async (req:Request,res:Response,next:NextFunction ) =>{
             res.setHeader('x-cart-session-id',cartSessionId);
         }
 
-        
+        //check if the inventory is available
+        const {data} = await axios.get(`${INVENTORY_SERVICE}/inventories/${parsedBody.data.inventoryId}`)
+        if(Number(data.quantity) < parsedBody.data.quantity){
+            res.status(400).json({message:"Inventory not available!"})
+            return;
+        }
 
         //add item to cart
         await redis.hset(`cart:${cartSessionId}`,parsedBody.data.productId,JSON.stringify({
             inventoryId:parsedBody.data.inventoryId,
             quantity:parsedBody.data.quantity
         }));
+        //TODO: check inventory for availability
+
+        // TODO: update the inventory
+        await axios.put(`${INVENTORY_SERVICE}/inventories/${parsedBody.data.inventoryId}`,{
+            quantity: parsedBody.data.quantity,
+            actionType: "OUT"
+        })
+
 
         res.status(200).json({message:"Item added to cart",cartSessionId});
         return;
 
-        //TODO: check inventory for availability
-
-        // TODO: update the inventory
+        
+        
 
     }catch(error){
         next(error);
