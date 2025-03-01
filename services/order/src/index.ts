@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import morgan from 'morgan'
+import { checkout, getOrderById, getOrders } from './controllers'
 
 
 dotenv.config()
@@ -28,8 +29,10 @@ app.get('/health',(_req,res) =>{
 //     }
 // })
 
-//inventory endpoints
-
+//api endpoints
+app.post('/orders/checkout',checkout)
+app.get('/orders/:id',getOrderById)
+app.get('/orders',getOrders )
 
 
 

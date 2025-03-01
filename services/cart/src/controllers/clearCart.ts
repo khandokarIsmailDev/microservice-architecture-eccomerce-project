@@ -9,6 +9,7 @@ const clearCart = async(req:Request,res:Response,next:NextFunction) =>{
 
         if(!cartSessionId){
             res.status(200).json({message:"Cart is empty!"})
+            return 
         }
 
         // check the sesstion id exist in the store
@@ -20,7 +21,7 @@ const clearCart = async(req:Request,res:Response,next:NextFunction) =>{
         }
 
         //clear the cart
-        await redis.del(`session:${cartSessionId}`)
+        await redis.del(`sessions:${cartSessionId}`)
         await redis.del(`cart:${cartSessionId}`)
 
         delete req.headers['x-cart-session-id'];

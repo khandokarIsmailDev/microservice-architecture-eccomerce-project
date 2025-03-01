@@ -34,7 +34,7 @@ const getMyCart = async(req:Request,res:Response,next:NextFunction) =>{
             return {
                 inventoryId,
                 quantity,
-                producId: key
+                productId: key
             }
         })
 
