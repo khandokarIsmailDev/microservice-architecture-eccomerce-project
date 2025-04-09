@@ -18,5 +18,5 @@ const receieveFormQueue = async (queue:string,callback:(message:string) => void)
 }
 
 receieveFormQueue("send-email",(message) =>{
-    console.log(`Received ${message} from send-email queue`);
+    console.log(`Received from send-email queue  ${message}`);
 })
