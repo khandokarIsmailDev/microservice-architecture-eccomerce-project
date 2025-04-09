@@ -18,7 +18,8 @@ const getOrderById = async (req:Request,res:Response,next:NextFunction) =>{
             })
             return;
         }
-        return res.status(200).json(order);
+         res.status(200).json(order);
+         return;
     }catch(error){
         next(error)
     }

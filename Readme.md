@@ -172,3 +172,8 @@ docker run -it --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:la
 - docker-compose file e rebitmq add korsi;
 - rebbitmq `order service => cart service ,emial service` er sate connect thakbe
 ![image](./Readmi-image/src16.png)
+
+## Cart servcie & Order Service
+- user add to cart korbe first, 
+- then cartsession-id dore user order create korbe
+- order confirm howar sate sate `order` service a akta send-queue msg log korbe terminal e, and sate sate `cart` service e akta recive msg log korbe terminal e;
