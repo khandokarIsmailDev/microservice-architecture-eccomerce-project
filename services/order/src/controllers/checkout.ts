@@ -81,20 +81,25 @@ const checkout = async(req:Request,res:Response,next:NextFunction) =>{
             }
         })
 
-        //clear cart
-        await axios.get(`${CART_SERVICE}/cart/clear`,{
-            headers:{
-                'x-cart-session-id':parsedBody.data.cartSessionId
-            }
-        })
+        console.log(`order created: ${order.id}`)
 
-        //send email
-        await axios.post(`http://localhost:4005/emails/send`,{
-            recipient:parsedBody.data.userEmail,
-            subject:"Confirm Your Order",
-            body:`Your order has been placed successfully. Your order number is ${order.id} & grand total is ${grandTotal}`,
-            source:"Chekout"
-        })
+        //------------Start---- clear-cart & send email ekhon r dorkar nai, aita queue handle korse ------
+        //clear cart
+        // await axios.get(`${CART_SERVICE}/cart/clear`,{
+        //     headers:{
+        //         'x-cart-session-id':parsedBody.data.cartSessionId
+        //     }
+        // })
+
+        // //send email
+        // await axios.post(`http://localhost:4005/emails/send`,{
+        //     recipient:parsedBody.data.userEmail,
+        //     subject:"Confirm Your Order",
+        //     body:`Your order has been placed successfully. Your order number is ${order.id} & grand total is ${grandTotal}`,
+        //     source:"Chekout"
+        // })
+
+        //----------------------- End --------------
 
         // send to queue
         sendToQueue('send-email',JSON.stringify(order));
