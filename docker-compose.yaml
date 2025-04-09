@@ -50,9 +50,17 @@ services:
     environment:
       - REDIS_ARGS=-save 900 1  #poti 900 second er por 1 ta update hbe
 
-
+  rebbitmq:
+    image: rabbitmq:3.8-management
+    container_name: rebbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    volumes:
+      - rebbitmq_data:/var/lib/rabbitmq
 
 volumes:
   postgres:
   mailhog:
   redis-stack:
+  rebbitmq_data:

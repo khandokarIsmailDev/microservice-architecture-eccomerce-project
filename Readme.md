@@ -168,3 +168,7 @@ docker run -it --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:la
 ### Relise product after 2min
 - er jonno amra `events` => `onKeyExpires.ts` file er modde `redis` er `subscribe` method use kora hoyeche; aita abar just `index.ts` ter link kore dewa hoise; er kaj 2 min por redis product relese kore dibe and setar log info show korbe terminal e; and age to amra ekta kaj korei rekhe silam; 2 mint er modde product add-to-cart theke delete hoye jabe, ar ekhon tar log info show korbe terminal e; aitoko kora hoise
 
+## RebbitMQ 
+- docker-compose file e rebitmq add korsi;
+- rebbitmq `order service => cart service ,emial service` er sate connect thakbe
+![image](./Readmi-image/src16.png)
