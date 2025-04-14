@@ -69,6 +69,26 @@
           "middleware": ["auth"]
         }
       ]
+    },
+    "cart":{
+      "url":"http://localhost:4006",
+      "routes":[
+        {
+          "path":"/cart/add-to-cart",
+          "methods":["post"],
+          "middleware":[]
+        },
+        {
+          "path":"/cart/me",
+          "methods":["get"],
+          "middleware":[]
+        },
+        {
+          "path":"/cart/clear",
+          "methods":["get"],
+          "middleware":[]
+        }
+      ]
     }
   }
 }
